@@ -36,17 +36,17 @@ export default class LoginScreen extends React.Component {
       <View style={styles.container}>
         <StatusBar barStyle="light-content"></StatusBar>
         <Image
-          source={require("../assets/icon.png")}
-          style={{ marginTop: -176, marginLeft: -50 }}
+          source={require("../assets/img/logos.jpg")}
+          style={{ marginTop: -176, marginLeft: -50, width: 34 }}
         ></Image>
         <Image
-          source={require("../assets/icon.png")}
-          style={{ position: "absolute", bottom: -325, right: -225 }}
+          source={require("../assets/img/logos.jpg")}
+          style={{ position: "absolute", bottom: -325, right: -225, width: 34 }}
         ></Image>
-        <Image
-          source={require("../assets/icon.png")}
-          style={{ marginTop: -110, alignSelf: "center" }}
-        ></Image>
+        {/* <Image
+          source={require("../assets/img/logos.jpg")}
+          style={{ marginTop: -110, alignSelf: "center", width: 34 }}
+        ></Image> */}
 
         <Text style={styles.greeting}>{`Hola de nuevo!.\n Bienvenido.`}</Text>
         <View style={styles.errorMessage}>

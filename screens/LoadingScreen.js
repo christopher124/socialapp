@@ -9,6 +9,7 @@ import {
   LayoutAnimation,
 } from "react-native";
 import * as firebase from "firebase";
+import Fire from "../Fire";
 
 export default class LoadingScreen extends React.Component {
   componentDidMount() {

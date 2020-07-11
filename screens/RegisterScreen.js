@@ -5,7 +5,6 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
-  ScrollView,
   Image,
   StatusBar,
 } from "react-native";
@@ -40,17 +39,14 @@ export default class LoginScreen extends React.Component {
       <View style={styles.container}>
         <StatusBar barStyle="light-content"></StatusBar>
         <Image
-          source={require("../assets/icon.png")}
-          style={{ marginTop: -116, marginLeft: -50 }}
+          source={require("../assets/img/logos.jpg")}
+          style={{ marginTop: -10, marginLeft: -50, width: 34 }}
         ></Image>
         <Image
-          source={require("../assets/icon.png")}
+          source={require("../assets/img/logos.jpg")}
           style={{ position: "absolute", bottom: -325, right: -225 }}
         ></Image>
-        <Image
-          source={require("../assets/icon.png")}
-          style={{ marginTop: 10, alignSelf: "center" }}
-        ></Image>
+
         <TouchableOpacity
           style={styles.back}
           onPress={() => this.props.navigation.goBack()}

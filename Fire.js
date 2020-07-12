@@ -1,5 +1,4 @@
 import firebase from "firebase";
-
 var firebaseConfig = {
   apiKey: "AIzaSyCTmuVIal-HOSbdEnYDDbs0arE_zp0rTiA",
   authDomain: "socialapp-68195.firebaseapp.com",
@@ -22,14 +21,14 @@ class Fire {
 
     return new Promise((res, rej) => {
       this.firestore
-        .collection("post")
+        .collection("posts")
         .add({
           text,
           uid: this.uid,
           timestamp: this.timestamp,
           image: remoteUri,
         })
-        .then((ref) => {
+        .then((rej) => {
           res(ref);
         })
         .catch((error) => {
@@ -41,24 +40,20 @@ class Fire {
   uploadPhotoAsync = async (uri) => {
     const path = `photos/${this.uid}/${Date.now()}.jpg`;
 
-    return new Promise(async (res, rej) => {
-      const response = fetch(uri);
-      const file = await (await response).blob();
+    return new Promise(
+      async (res, rej) => {
+        const response = await fetch(uri);
+        const file = await response.blob();
 
-      let upload = firebase.storage().ref(path).put(file);
+        let upload = firebase.storage().ref(path).put(file);
 
-      upload.on(
-        "state_changed",
-        (snapshot) => {},
-        (err) => {
-          rej(err);
-        },
-        async () => {
-          const url = await upload.snapshot.ref.getDownloadURL();
-          res(url);
-        }
-      );
-    });
+        upload.on("state_changed"), (snapshot) => {}, (err) => rej(err);
+      },
+      async () => {
+        const url = await upload.snapshot.ref.getDownloadURL();
+        res(url);
+      }
+    );
   };
 
   get firestore() {
@@ -70,7 +65,7 @@ class Fire {
   }
 
   get timestamp() {
-    return DataCue.now();
+    return Date.now();
   }
 }
 

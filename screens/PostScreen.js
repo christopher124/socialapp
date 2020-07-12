@@ -82,7 +82,7 @@ export default class PostScreen extends React.Component {
             style={{ flex: 1 }}
             placeholder="¿Quieres compartir algo?"
             onChangeText={(text) => this.setState({ text })}
-            value={this.text}
+            value={this.state.text}
           ></TextInput>
         </View>
         <TouchableOpacity style={styles.photo} onPress={this.pickImge}>
